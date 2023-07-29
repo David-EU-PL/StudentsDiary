@@ -16,7 +16,14 @@ namespace StudentsDiary
         public Form1()
         {
             InitializeComponent();
-            File.Create($@"{Path.GetDirectoryName(Application.ExecutablePath)}\\NowyPlik2.txt");
+            var path = $@"{Path.GetDirectoryName(Application.ExecutablePath)}\..\NowyPlik2.txt";
+
+            File.AppendAllText(path, "Akademia .NET\n");
+            var text = File.ReadAllText(path);
+
+            MessageBox.Show(text);
+            MessageBox.Show("Test programu", "Tytuł programu", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Error);
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
