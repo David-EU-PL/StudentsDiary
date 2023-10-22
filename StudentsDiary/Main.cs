@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace StudentsDiary
@@ -15,6 +16,15 @@ namespace StudentsDiary
             RefreshDiary();
             SetColumnsHeader();
 
+            var student1 = new Student();
+            student1.FirstName = "1";
+            student1.Id = 1;
+
+            var person = new Person();
+            person.Id = 2;
+
+            person = student1;
+            MessageBox.Show(person.Id.ToString());
         }
 
         private void RefreshDiary()
