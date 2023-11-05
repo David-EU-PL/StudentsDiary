@@ -22,7 +22,7 @@ namespace StudentsDiary
             }
         }
 
-        public T DeserializeFromFile()
+        public T DeSerializeFromFile()
         {
             if (!File.Exists(_filePath))
                 return new T();
